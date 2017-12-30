@@ -20,13 +20,18 @@ const generatebombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
         board.push(row);
     }
     let numberOfBombsPlaced = 0;
-    while (numberOfBombs < numberOfBombs){
-      let randomRowIndex = Math.floor(Math.random() * numberOfRows;)
+    while (numberOfBombsPlaced < numberOfBombs){
+      // Currently the bomb can replace exsiting bombs which is not ideal
+      let randomRowIndex = Math.floor(Math.random() * numberOfRows);
+      let randomColumnIndex = Math.floor(Math.random() * numberOfColumns);
+      board[randomRowIndex][randomColumnIndex] = 'B'
+      numberOfBombsPlaced ++
     }
-
-
-    return board
 }
 
-console.log(generatePlayerBoards('3','3'));
-console.log(generatebombBoard('3','3'));
+const PrintBoard = board => {
+  console.log(board.map(row => row.join(' | ')).join('\n'));
+}
+
+generatePlayerBoards(3,3);
+generatebombBoard(3,3,3)
