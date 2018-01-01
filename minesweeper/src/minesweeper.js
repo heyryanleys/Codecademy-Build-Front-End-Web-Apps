@@ -24,7 +24,7 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
     let randomRowIndex = Math.floor(Math.random() * numberOfRows);
     let randomColumnIndex = Math.floor(Math.random() * numberOfColumns);
     board[randomRowIndex][randomColumnIndex] = 'B';
-    numberOfBombsPlaced = numberOfBombsPlaced + 1;
+    numberOfBombsPlaced++
   }
   return board
 }
@@ -32,6 +32,14 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
 const printBoard = board => {
    console.log(board.map(row => row.join(' | ')).join('\n'))
 }
-console.log(printBoard)
+
+const playerBoard = generatePlayerBoard(3,4);
+const bombBoard = generateBombBoard(3,4,5);
+console.log('Player Board:');
+printBoard(playerBoard)
+console.log('Bomb Board:');
+printBoard(bombBoard)
+
+
 //console.log(generatePlayerBoard(3,4));
 //console.log(generateBombBoard(4,4,4));
