@@ -26,15 +26,16 @@ const businesses = [
   business,
 ];
 
-export default class App extends Component {
+class App extends Component {
   render() {
-    <BusinessList businesses={businesses} />
     return (
       <div className="App">
         <h1>ravenous</h1>
-          <SearchBar />
-          <BusinessList />
+        <SearchBar />
+        <BusinessList businesses={businesses} />
       </div>
     );
   }
 }
+
+export default App
