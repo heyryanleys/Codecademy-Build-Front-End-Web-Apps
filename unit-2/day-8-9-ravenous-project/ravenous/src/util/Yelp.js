@@ -13,16 +13,16 @@ function search(term,location,sortBy){
     if(jsonResponse.businesses){
       return jsonResponse.businesses.map(business => (
         return {
-          id: jsonResponse.businesses.id,
-          imageSrc: jsonResponse.businesses.image_url,
-          name: jsonResponse.businesses.name,
-          address: jsonResponse.businesses.location.address1,
-          city: jsonResponse.businesses.location.city,
-          state: jsonResponse.businesses.location.state,
-          zipCode: jsonResponse.businesses.location.zip_code,
-          category: jsonResponse.businesses.categories.title,
-          rating: jsonResponse.businesses.rating,
-          reviewCount: jsonResponse.businesses.review_count
+          id: business.id,
+          imageSrc: business.image_url,
+          name: business.name,
+          address: business.location.address1,
+          city: business.location.city,
+          state: business.location.state,
+          zipCode: business.location.zip_code,
+          category: business.categories.title,
+          rating: business.rating,
+          reviewCount: business.review_count
         }
       ))
     } throw new Error('Request failed!')
